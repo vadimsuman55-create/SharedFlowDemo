@@ -58,6 +58,7 @@ fun MainScreen(
     LaunchedEffect(key1 = Unit) {
         lifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
             sharedFlow.collect {
+                println("Collecting $it")
                 messages.add(it)
             }
         }
